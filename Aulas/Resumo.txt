@@ -1,0 +1,15 @@
+-> Criando um novo projeto Next: npx create-next-app nome_da_pasta
+-> Estrutura de Pastas:
+  - app:	App Router
+  - pages:	Roteador de páginas
+  - public:	Ativos estáticos a serem exibidos
+  - src:	Pasta de origem do aplicativo opcional
+-> O ao iniciar o npx create, possui duas opções para roteamento das páginas: App Router(dentro da pasta app é criada subpastas e arquivos com o caminho da rota que vai ser seguido: O appdiretório funciona junto com o pagesdiretório para permitir a adoção incremental. Isso permite que você opte por algumas rotas de seu aplicativo para o novo comportamento enquanto mantém outras rotas no pagesdiretório para o comportamento anterior. IMPORTANTE: É bom saber : o App Router tem prioridade sobre o Pages Router. Rotas entre diretórios não devem resolver para o mesmo caminho de URL e causarão um erro de tempo de compilação para evitar um conflito. ) e o Pages Router( é criada uma pasta Pages, e dentro dessa pasta todos os seus componentes vai ser uma rota diferente, a rota vai ser exatamente o nome do componente).
+-> Erro Babel: substituir no arquivo .eslintrc.json : {      
+  "extends": ["next/babel", "next/core-web-vitals"]
+} então ctrl + shift + pe procure por ESLint: Restart ESLint Server.
+-> Utilizando AppRouter:
+  - O arquivo chamado page.tsx dentro do da pasta app é considerado a rota inicial: /
+  - Ao criar uma nova pasta deverá criar o arquivo page.tsx quer será o index daquela pasta(rota).
+  - O page deve ser exportado como default para que a rota funcione.
+  - O app diretório deve incluir um layout raiz. O layout raiz deve definir <html>e <body>marcar, pois o Next.js não os cria automaticamente.
