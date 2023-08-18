@@ -1,3 +1,4 @@
+-> Pré Renderização: Por padrão, o Next.js pré-renderiza todas as páginas. Isso significa que o Next.js gera HTML para cada página com antecedência , em vez de ter tudo feito pelo JavaScript do lado do cliente. A pré-renderização pode resultar em melhor desempenho e SEO. Cada HTML gerado é associado ao código JavaScript mínimo necessário para essa página. Quando uma página é carregada pelo navegador, seu código JavaScript é executado e torna a página totalmente interativa. (Esse processo é chamado de hidratação .)
 -> Criando um novo projeto Next: npx create-next-app nome_da_pasta
 -> Estrutura de Pastas:
   - app:	App Router
@@ -8,7 +9,7 @@
 -> Erro Babel: substituir no arquivo .eslintrc.json : {      
   "extends": ["next/babel", "next/core-web-vitals"]
 } então ctrl + shift + pe procure por ESLint: Restart ESLint Server.
--> Utilizando AppRouter:
+-> Utilizando AppRouter: OBS: levará em consideração o nome do arquivo, e não o nome do componente ou da função.
   - O arquivo chamado page.tsx dentro do da pasta app é considerado a rota inicial: /
   - Ao criar uma nova pasta deverá criar o arquivo page.tsx quer será o index daquela pasta(rota).
   - O page deve ser exportado como default para que a rota funcione.
@@ -32,3 +33,12 @@
   - Renomeiar o arquivo para exemplo: favic.ico e deixar ele na pasta public e utilizar a tag Head juntamente com:   icons: {
     icon: '/favic.ico',
   } -> metadata layoutRaiz
+-> Consultas em API: são divididas em:
+  -PreRendering: quando entra no site o next já vai fazendo as requisições na API para que quando for utilizar já estarem carregadas.
+  - Fetch(utilizado para AppRouter): nativo do react.
+  - GetStaticProps(utilizado somente quando utilizar o metodo de pages): utilizado para realizar requisições na API(fetch). Deve utilizar na própria página que irá utilizar os dados da API, deve retornar um objeto com dados. O next vai renderizar isso antes do acesso do usuário, dando a impressão de carregamento instantâneo. O recurso é chamado Pre-rendering.
+-> Rotas Dinâmicas: não serão geradas na fase de pre-renderização. O padrão é utiliza: [nome_pagina].extensão, e dentro desta pasta vai ter o componente que vai receber o parametro e ser utilizado.
+  - OBS: o nome escrito na pasta[nome] é o nome do parâmetro.
+  - AppRouter: utiliza a props params para ler o parâmetro recebido.
+  - Pages: utiliza o useRouter para obter o parâmetro.
+  

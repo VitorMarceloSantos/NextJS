@@ -15,10 +15,10 @@ export default function DashBoard() {
             <Link href="/dashboard/menu">Menu</Link>
           </li>
           <li>
-            <Link href="/dashboard/menu">História</Link>
+            <Link href="/dashboard/historia">História</Link>
           </li>
           <li>
-            <Link href="/dashboard/menu"> Contato</Link>
+            <Link href="/dashboard/contato"> Contato</Link>
           </li>
         </ul>
       </nav>
