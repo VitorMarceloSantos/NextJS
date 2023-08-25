@@ -1,8 +1,15 @@
 type PokedexType = {
-  name: string,
-  url: string
+  name: string;
+  url: string;
 };
 
 export type ResultsPokedexType = {
-  results : PokedexType[]
-}
+  results: PokedexType[];
+};
+
+export type CardPokemon = {
+  pokemonCard: {
+    pokemon: PokedexType;
+    index: number;
+  };
+};
