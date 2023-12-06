@@ -1,0 +1,15 @@
+-> As pastas, assets, components, styles devem ficar na raiz do projeto.
+
+-> As pastas com underscore(_) não são acessíveis(não será roteada pelo servidor) ou seja, são privadas.
+
+-> As rotas(router) fica dentro da pasta app/api
+
+-> Usando os () significa um grupo de rotas
+
+-> Usando o @ significa rotas paralelas
+
+-> Usando (..) significa que a rota vai ser interceptada
+
+-> %5F é usado para (_)underscore no nome da rota acessível: http:localhost:3000/_admin
+
+-> A pasta SRC é opcional, caso opte por usar, todas as pastas(app, assets, components, types, ....) vai ficar dentro dela.

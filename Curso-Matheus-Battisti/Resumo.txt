@@ -45,3 +45,4 @@
   - AppRouter: utiliza um arquivo na raiz(app) com o nome: not-found.tsx (https://nextjs.org/docs/app/building-your-application/routing)
   - Pages: utiliza um a: arquivo na raiz(Page) com o nome 404.tsx
 -> Para realizar o build do projeto, bastar entrar com o comando: npm run build
+-> O ideal é que cada pagina(rota) tenha um Head( metadata dentro de layout - onde vai ter as configurações da página, como nome, descrição, entre outras)

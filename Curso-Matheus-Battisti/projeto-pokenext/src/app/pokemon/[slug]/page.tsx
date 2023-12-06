@@ -1,8 +1,20 @@
 import Image from "next/image";
 import styles from "../../../styles/Pokemon.module.css";
 import Link from "next/link";
+import { NextResponse } from "next/server";
 
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+
+// export async function GET(request: Request) {
+//   const { searchParams } = new URL(request.url);
+//   const id = searchParams.get("id");
+//   const res = await fetch(`${apiUrl}/${id}`);
+
+//   if (res.ok) throw new Error("Problemas com o Fetch");
+//   const data = await res.json();
+
+//   return NextResponse.json({ data});
+// }
 
 async function getData(id: string) {
   const res = await fetch(`${apiUrl}/${id}`);
@@ -20,9 +32,7 @@ export default async function PokemonDetails({
       <div className={styles.pokemon_container}>
         <h1 className={styles.title}>{pokemon.name}</h1>
         <Image
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-          params.slug
-        }.png`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${params.slug}.png`}
           width="200"
           height="200"
           alt={pokemon.name}
@@ -54,7 +64,7 @@ export default async function PokemonDetails({
             <p>{pokemon.weight / 10} kg</p>
           </div>
         </div>
-        <Link href='/'>Voltar</Link>
+        <Link href="/">Voltar</Link>
       </div>
     </>
   );
